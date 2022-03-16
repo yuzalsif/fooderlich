@@ -1,16 +1,15 @@
-# fooderlich
+# Fooderlich
 
-A new Flutter project.
+A simple recipe App to help you with the best recipe ideas.
+See what friends are saying about different recipes, and in the
+To Buy tab prepare a list of groceries to buy, to help you 
+cook your meal 
 
-## Getting Started
+## Authors 
 
-This project is a starting point for a Flutter application.
+ - [@yuzalsif](https://www.github.com/yuzalsif)
 
-A few resources to get you started if this is your first Flutter project:
+## Acknowledgements
+ -[Raywenderlich](https://GitHub.com/raywenderlich)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
