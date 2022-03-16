@@ -1,57 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/card1.dart';
-import 'package:fooderlich/card2.dart';
-import 'package:fooderlich/card3.dart';
+import 'package:provider/provider.dart';
+import './models/models.dart';
+import './screens/screens.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
-  var _selectedIndex = 0;
-
-  static const List<Widget> _cardsOptions = [
-    Card1(), Card2(), Card3()
+  static List<Widget> pages = <Widget>[
+    ExploreScreen(),
+    RecipeScreen(),
+    Container(
+      color: Colors.green,
+    ),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Fooderlich',
-          style: Theme.of(context).textTheme.headline6,
-        ),
-      ),
-      body: Center(child: _cardsOptions[_selectedIndex]),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card1',
+    return Consumer<TabManager>(
+      builder: (context, tabManager, child) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Center(child: Text('Fooderlich')),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card2'
+          body: pages[tabManager.currentTab],
+          bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor:
+                Theme.of(context).textSelectionTheme.selectionColor,
+            currentIndex: tabManager.currentTab,
+            onTap: (index) {
+              tabManager.goToTab(index);
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.explore),
+                label: 'Explore',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.book),
+                label: 'Recipes',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.list),
+                label: 'To Buy',
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card3'
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
-      ),
+        );
+      },
     );
   }
 }

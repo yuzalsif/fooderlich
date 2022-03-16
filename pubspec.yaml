@@ -29,7 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^1.1.1
+  google_fonts: ^2.3.1
+  provider: ^6.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,6 +61,10 @@ flutter:
 
   assets:
     - assets/
+    - assets/food_pics/
+    - assets/magazine_pics/
+    - assets/sample_data/
+    - assets/profile_pics/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
