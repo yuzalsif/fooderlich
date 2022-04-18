@@ -21,7 +21,10 @@ class FooderLich extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(
             create: (context) => TabManager(),
-          )
+          ),
+          ChangeNotifierProvider(
+            create: (context) => GroceryItemManager(),
+          ),
         ],
         child: const Home(),
       ),

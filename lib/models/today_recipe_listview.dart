@@ -28,7 +28,7 @@ class TodayRecipeListView extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          Container(
+          SizedBox(
             height: 400,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,

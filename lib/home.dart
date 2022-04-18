@@ -14,9 +14,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipeScreen(),
-    Container(
-      color: Colors.green,
-    ),
+    const GroceryScreen(),
   ];
 
   @override

@@ -5,3 +5,5 @@ export 'explore_data.dart';
 export 'tab_manager.dart';
 export 'today_recipe_listview.dart';
 export 'recipe_gridview.dart';
+export 'grocery_item_model.dart';
+export 'grocery_item_manager.dart';
